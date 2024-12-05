@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomaly Detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Network Intruision Detection</h1>
+        <form action="/predict" method="POST" class="mt-4">
+            <div class="mb-3">
+                <label for="src_bytes" class="form-label">Source Bytes</label>
+                <input type="number" step="any" name="src_bytes" class="form-control" placeholder="Enter source bytes" required>
+            </div>
+            <div class="mb-3">
+                <label for="dst_bytes" class="form-label">Destination Bytes</label>
+                <input type="number" step="any" name="dst_bytes" class="form-control" placeholder="Enter destination bytes" required>
+            </div>
+            <div class="mb-3">
+                <label for="count" class="form-label">Count</label>
+                <input type="number" step="any" name="count" class="form-control" placeholder="Enter count" required>
+            </div>
+            <div class="mb-3">
+                <label for="same_srv_rate" class="form-label">Same Service Rate</label>
+                <input type="number" step="any" name="same_srv_rate" class="form-control" placeholder="Enter same service rate" required>
+            </div>
+            <div class="mb-3">
+                <label for="dst_host_srv_count" class="form-label">Destination Host Service Count</label>
+                <input type="number" step="any" name="dst_host_srv_count" class="form-control" placeholder="Enter destination host service count" required>
+            </div>
+            <div class="mb-3">
+                <label for="dst_host_same_srv_rate" class="form-label">Destination Host Same Service Rate</label>
+                <input type="number" step="any" name="dst_host_same_srv_rate" class="form-control" placeholder="Enter destination host same service rate" required>
+            </div>
+            <div class="mb-3">
+                <label for="dst_host_same_src_port_rate" class="form-label">Destination Host Same Source Port Rate</label>
+                <input type="number" step="any" name="dst_host_same_src_port_rate" class="form-control" placeholder="Enter destination host same source port rate" required>
+            </div>
+            <div class="mb-3">
+                <label for="protocol_type" class="form-label">Protocol Type</label>
+                <select name="protocol_type" class="form-select" required>
+                    {% for item in protocol_type_sort %}
+                        <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="service" class="form-label">Service</label>
+                <select name="service" class="form-select" required>
+                    {% for item in service_sort %}
+                        <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="flag" class="form-label">Flag</label>
+                <select name="flag" class="form-select" required>
+                    {% for item in flag_sort %}
+                        <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Predict Anomaly</button>
+        </form>
+
+        {% if prediction is not none %}
+            <div class="alert alert-success mt-3 text-center">
+                <h4>Prediction: {{ prediction }}</h4>
+            </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>Developed by <a href="https://github.com/Md-Emon-Hasan" target="_blank">Md Emon Hasan</a></p>
+        <p>Email: <a href="mailto:iconiemon01@gmail.com">iconiemon01@gmail.com</a></p>
+    </footer>
+</body>
+</html>

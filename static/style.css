@@ -1,0 +1,119 @@
+body {
+    background-image: url('https://25090789.fs1.hubspotusercontent-eu1.net/hubfs/25090789/anomaly%20detection%20in%20unsupervised%20learning.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 50px auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2.8rem;
+    color: #f8f9fa;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+}
+
+.form-label {
+    font-weight: bold;
+    color: #e9ecef;
+}
+
+.form-control,
+.form-select {
+    /* background-color: #1c1f22; */
+    background-color: #23282c;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: 0 0 12px rgba(72, 149, 239, 0.9);
+}
+
+.btn-primary {
+    background-color: #28a745;
+    border: none;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.alert {
+    background-color: #17a2b8;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 30px;
+    text-align: center;
+    color: #f8f9fa;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+footer a {
+    color: #17a2b8;
+    text-decoration: none;
+    font-weight: lighter;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hide spin buttons in Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none; /* Add this line */
+    margin: 0;
+}
+
+/* Hide spin buttons in Firefox */
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+    appearance: textfield; /* Add this line */
+}
+
+/* Hide spin buttons in Internet Explorer 10+ */
+input[type="number"]::-ms-clear {
+    display: none;
+}
